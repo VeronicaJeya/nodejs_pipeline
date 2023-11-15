@@ -19,7 +19,11 @@ pipeline{
                 bat 'npm install pm2 -g'
             }
         }
-        
+        stage('Deploy'){
+            steps {
+                bat 'pm2 startOrRestart pm2.config.json'
+            }
+        }
         
     }
 }
